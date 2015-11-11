@@ -1,0 +1,47 @@
+<f:layout name="Default" />
+
+<f:section name="Title">Installations</f:section>
+
+<f:section name="Content">
+
+	<f:for each="{installations}" as="installation" iteration="installationIterator">
+		<div class="panel panel-default">
+			<!-- Default panel contents -->
+			<div class="panel-heading">{installation.name}</div>
+			<div class="panel-body">
+				<p>Some default panel content here. Nulla vitae elit libero, a pharetra augue. Aenean lacinia bibendum nulla sed consectetur. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+
+				<dl class="dl-horizontal">
+					<dt>Installation remote</dt>
+					<dd>{installation.remote}</dd>
+					<dt>Installation hostname</dt>
+					<dd>{installation.hostName}</dd>
+				</dl>
+				<f:link.action action="showInstallation" arguments="{installation: installation}" class="btn btn-default btn-xs">View installation</f:link.action>
+			</div>
+
+			<!-- Table -->
+			<table class="table">
+				<thead>
+				<tr>
+					<th>#</th>
+					<th>user</th>
+					<th>deployTime</th>
+					<th></th>
+				</tr>
+				</thead>
+				<tbody>
+
+				<f:for each="{installation.deployments}" as="deployment" iteration="deploumentIterator">
+					<tr>
+						<th scope="row">-</th>
+						<td>{deployment.user}</td>
+						<td>{deployment.deployTime -> f:format.date(format: 'd.m.Y - H:i:s')}</td>
+						<td><f:link.action action="showDeployment" arguments="{deployment: deployment}" class="btn btn-default btn-xs">View deployment</f:link.action></td>
+					</tr>
+				</f:for>
+				</tbody>
+			</table>
+		</div>
+	</f:for>
+</f:section>

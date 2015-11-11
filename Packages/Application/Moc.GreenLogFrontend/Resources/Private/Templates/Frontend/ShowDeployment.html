@@ -1,0 +1,37 @@
+<f:layout name="Default" />
+
+<f:section name="Title">Deployments overview of: N/A
+</f:section>
+
+<f:section name="Content">
+	<div class="panel panel-primary">
+		<div class="panel-heading">N/A</div>
+		<div class="panel-body">
+			<p>Some default panel content here. Nulla vitae elit libero, a pharetra augue. Aenean lacinia bibendum nulla sed consectetur. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+			<dl class="dl-horizontal">
+				<dt>Deploying user</dt>
+				<dd>{deployment.user}</dd>
+				<dt>Deployment time:</dt>
+				<dd>{deployment.deployTime -> f:format.date(format: 'd.m.Y - H:i:s')}</dd>
+			</dl>
+		</div>
+	</div>
+
+
+	<h2>Commits:</h2>
+
+	<f:for each="{deployment.commits}" as="commit" iteration="commitIterator">
+
+	<div class="panel panel-default">
+		<!-- Default panel contents -->
+		<div class="panel-heading">{commit.messageFirstLine}</div>
+		<div class="panel-body">
+			<pre>{commit.message -> f:format.nl2br()}</pre>
+			<button type="button" class="btn btn-default btn-xs" disabled="disabled">View commit</button>
+		</div>
+	</div>
+
+	</f:for>
+
+
+</f:section>

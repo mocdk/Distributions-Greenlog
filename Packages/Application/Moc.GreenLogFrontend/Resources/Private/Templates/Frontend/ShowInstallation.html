@@ -1,0 +1,66 @@
+<f:layout name="Default" />
+
+<f:section name="Title">Installation overview of: {f:if(condition: installation.name, then: installation.name, else:
+	installation.identifier)}
+</f:section>
+
+<f:section name="Content">
+	<div class="panel panel-primary">
+		<div class="panel-heading">{installation.name}</div>
+		<div class="panel-body">
+			<p>Some default panel content here. Nulla vitae elit libero, a pharetra augue. Aenean lacinia bibendum nulla
+				sed consectetur. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam
+				id dolor id nibh ultricies vehicula ut id elit.</p>
+			<dl class="dl-horizontal">
+				<dt>Installation remote</dt>
+				<dd>{installation.remote}</dd>
+				<dt>Installation hostname</dt>
+				<dd>{installation.hostName}</dd>
+			</dl>
+		</div>
+	</div>
+
+
+	<h2>Deployments:</h2>
+
+	<f:for each="{installation.deployments}" as="deployment" iteration="deploymentIterator">
+		<div class="panel panel-default">
+			<!-- Default panel contents -->
+			<div class="panel-heading">Deployment heading</div>
+			<div class="panel-body">
+				<p>Some default panel content here. Nulla vitae elit libero, a pharetra augue. Aenean lacinia bibendum
+					nulla sed consectetur. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis
+					vestibulum. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+				<dl class="dl-horizontal">
+					<dt>Deploying user</dt>
+					<dd>{deployment.user}</dd>
+					<dt>Deployment time:</dt>
+					<dd>{deployment.deployTime -> f:format.date(format: 'd.m.Y - H:i:s')}</dd>
+				</dl>
+				<f:link.action action="showDeployment" arguments="{deployment: deployment}" class="btn btn-default btn-xs">View deployment</f:link.action>
+			</div>
+
+			<!-- Table -->
+			<table class="table">
+				<thead>
+				<tr>
+					<th>#</th>
+					<th>Commit comment</th>
+					<th></th>
+				</tr>
+				</thead>
+				<tbody>
+				<f:for each="{deployment.commits}" as="commit" iteration="commitIterator">
+					<tr>
+						<th scope="row">-</th>
+						<td>{commit.messageFirstLine}</td>
+						<td>{commit.sha1}</td>
+					</tr>
+				</f:for>
+				</tbody>
+			</table>
+		</div>
+	</f:for>
+
+
+</f:section>

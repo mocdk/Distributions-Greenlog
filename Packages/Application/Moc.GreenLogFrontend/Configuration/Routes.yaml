@@ -1,0 +1,26 @@
+-
+  name: 'index'
+  uriPattern: ''
+  defaults:
+    '@package':    'Moc.GreenLogFrontend'
+    '@controller': 'Frontend'
+    '@action':     'index'
+    '@format':     'html'
+
+-
+  name: 'show installation'
+  uriPattern: 'installation/{installation}'
+  defaults:
+    '@package':    'Moc.GreenLogFrontend'
+    '@controller': 'Frontend'
+    '@action':     'showInstallation'
+    '@format':     'html'
+
+-
+  name: 'show deployment'
+  uriPattern: 'deployment/{deployment}'
+  defaults:
+    '@package':    'Moc.GreenLogFrontend'
+    '@controller': 'Frontend'
+    '@action':     'showDeployment'
+    '@format':     'html'
