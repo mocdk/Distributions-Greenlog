@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2f4075b523589c59545c6278f7c1508c",
-    "content-hash": "fbf43edfb7d08542194fbd36083107d4",
+    "hash": "b19088444463c185613d15d8e3a60219",
+    "content-hash": "cf2c29d6b8caf6ba2734166e002b8f8a",
     "packages": [
         {
             "name": "composer/installers",
@@ -998,36 +998,6 @@
             ],
             "description": "Next-Generation Templating Framework for TYPO3 Flow and TYPO3 Neos, also backported to TYPO3 CMS",
             "time": "2015-08-11 13:43:22"
-        },
-        {
-            "name": "typo3/welcome",
-            "version": "3.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/neos/flow-welcome.git",
-                "reference": "a092082a54631673f5c3891217bd06e11ec751f3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/neos/flow-welcome/zipball/a092082a54631673f5c3891217bd06e11ec751f3",
-                "reference": "a092082a54631673f5c3891217bd06e11ec751f3",
-                "shasum": ""
-            },
-            "require": {
-                "typo3/flow": "3.0.*"
-            },
-            "type": "typo3-flow-framework",
-            "autoload": {
-                "psr-0": {
-                    "TYPO3\\Welcome": "Classes"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "LGPL-3.0+"
-            ],
-            "description": "This package provides a start screen for the Flow distribution with links to online resources.",
-            "time": "2015-07-31 11:53:02"
         }
     ],
     "packages-dev": [
