@@ -10,7 +10,7 @@ $application->setOption('transferMethod', 'rsync');
 $application->setOption('packageMethod', 'git');
 $application->setOption('updateMethod', NULL);
 $application->setContext('Production');
-$application->setDeploymentPath('/dana/data/realestate/greenlog');
+$application->setDeploymentPath('/dana/data/greenlog');
 $application->setOption('keepReleases', 2);
 $deployment->addApplication($application);
 
