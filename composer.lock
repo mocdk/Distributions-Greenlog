@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ebd4104f51fe501c75e425b44a3c8fc6",
-    "content-hash": "5e148bc1badb61a8dec1ab460c48e523",
+    "hash": "2f4075b523589c59545c6278f7c1508c",
+    "content-hash": "fbf43edfb7d08542194fbd36083107d4",
     "packages": [
         {
             "name": "composer/installers",
@@ -2039,6 +2039,52 @@
             "time": "2015-06-21 13:59:46"
         },
         {
+            "name": "symfony/process",
+            "version": "v2.7.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/process.git",
+                "reference": "4a959dd4e19c2c5d7512689413921e0a74386ec7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/process/zipball/4a959dd4e19c2c5d7512689413921e0a74386ec7",
+                "reference": "4a959dd4e19c2c5d7512689413921e0a74386ec7",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.9"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.7-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Process\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Process Component",
+            "homepage": "https://symfony.com",
+            "time": "2015-10-23 14:47:27"
+        },
+        {
             "name": "typo3/buildessentials",
             "version": "3.0.3",
             "source": {
@@ -2095,6 +2141,36 @@
             ],
             "description": "A simple generator for controller and views.",
             "time": "2015-07-31 11:53:02"
+        },
+        {
+            "name": "typo3/surf",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://git.typo3.org/Packages/TYPO3.Surf.git",
+                "reference": "952ad24b37bb107b2399f6a7eef85598ad493faf"
+            },
+            "require": {
+                "symfony/process": "~2.1",
+                "typo3/flow": "*"
+            },
+            "type": "typo3-flow-package",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.9.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "TYPO3\\Surf": "Classes"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0+"
+            ],
+            "description": "TYPO3 Surf is a deployment tool based on Flow and suited for a wide variety of applications",
+            "time": "2015-10-05 23:04:28"
         }
     ],
     "aliases": [],
@@ -2102,7 +2178,8 @@
     "stability-flags": {
         "doctrine/migrations": 5,
         "langeland/liquid": 20,
-        "flowpack/behat": 20
+        "flowpack/behat": 20,
+        "typo3/surf": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
