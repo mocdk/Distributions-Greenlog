@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c3f151f9b2d46ae248859f09eb5ff71e",
-    "content-hash": "8647ae71a38a80e84b5c65424fd14d7d",
+    "hash": "ebd4104f51fe501c75e425b44a3c8fc6",
+    "content-hash": "5e148bc1badb61a8dec1ab460c48e523",
     "packages": [
         {
             "name": "composer/installers",
@@ -713,6 +713,26 @@
                 "orm"
             ],
             "time": "2015-08-31 13:19:01"
+        },
+        {
+            "name": "langeland/liquid",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:langeland/Langeland.Liquid.git",
+                "reference": "f0db7731d2b7de64578d2af099d737ab1d858a1d"
+            },
+            "require": {
+                "typo3/flow": "*"
+            },
+            "type": "typo3-flow-package",
+            "autoload": {
+                "psr-0": {
+                    "Langeland\\Liquid": "Classes"
+                }
+            },
+            "description": "Add description here",
+            "time": "2014-10-25 14:17:36"
         },
         {
             "name": "symfony/console",
@@ -2081,6 +2101,7 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "doctrine/migrations": 5,
+        "langeland/liquid": 20,
         "flowpack/behat": 20
     },
     "prefer-stable": false,
