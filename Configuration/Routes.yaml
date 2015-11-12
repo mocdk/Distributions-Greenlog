@@ -13,6 +13,23 @@
 # If the package "Welcome" is installed, its fallback route will point to an
 # informative welcome screen.
 
+-
+  name: 'GreenLog Frontend'
+  uriPattern: '<GreenLogFrontendSubroutes>'
+  defaults:
+    '@format': 'html'
+  subRoutes:
+    GreenLogFrontendSubroutes:
+      package: Moc.GreenLogFrontend
+
+-
+  name: 'GreenLog API v1'
+  uriPattern: 'api/v1/<GreenLogApiSubroutes>'
+  defaults:
+    '@format': 'html'
+  subRoutes:
+    GreenLogApiSubroutes:
+      package: Moc.GreenLogApi
 
 ##
 # Flow subroutes
