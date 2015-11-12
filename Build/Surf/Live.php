@@ -9,8 +9,8 @@ $application->setOption('composerCommandPath', 'composer');
 $application->setOption('transferMethod', 'rsync');
 $application->setOption('packageMethod', 'git');
 $application->setOption('updateMethod', NULL);
-$application->setContext('Production');
-$application->setDeploymentPath('/dana/data/greenlog');
+$application->setContext('Production/Live');
+$application->setDeploymentPath('/dana/data/greenlog.moc.net');
 $application->setOption('keepReleases', 2);
 $deployment->addApplication($application);
 
@@ -46,7 +46,7 @@ $workflow->afterStage('switch', array('fn:clearopcache'), $application);
 
 // Notify on slack after switching
 //$workflow->setTaskOptions('langeland.mimer.surf:deploymentlog', array());
-$workflow->afterStage('switch', array('langeland.mimer.surf:deploymentlog'), $application);
+//$workflow->afterStage('switch', array('langeland.mimer.surf:deploymentlog'), $application);
 
 
 $deployment->setWorkflow($workflow);
