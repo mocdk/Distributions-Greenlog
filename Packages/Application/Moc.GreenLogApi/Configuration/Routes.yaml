@@ -3,7 +3,7 @@
   name: 'api'
   uriPattern: 'register'
   defaults:
-    '@package':    'Moc.GreenLog'
+    '@package':    'Moc.GreenLogApi'
     '@controller': 'Api'
     '@action':     'registerDeployment'
     '@format':     'json'
