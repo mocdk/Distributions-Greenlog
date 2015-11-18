@@ -1,18 +1,20 @@
 <f:layout name="Default" />
 
-<f:section name="Title">Deployments overview of: N/A
-</f:section>
+<f:section name="Title">Deployment for: {deployment.installation.name}</f:section>
 
 <f:section name="Content">
 	<div class="panel panel-primary">
-		<div class="panel-heading">N/A</div>
+		<div class="panel-heading"><h2 class="panel-title">Deployed at: {deployment.deployTime -> f:format.date(format: 'd.m.Y - H:i:s')} by {deployment.user}</h2></div>
 		<div class="panel-body">
-			<p>Some default panel content here. Nulla vitae elit libero, a pharetra augue. Aenean lacinia bibendum nulla sed consectetur. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
 			<dl class="dl-horizontal">
 				<dt>Deploying user</dt>
 				<dd>{deployment.user}</dd>
 				<dt>Deployment time:</dt>
 				<dd>{deployment.deployTime -> f:format.date(format: 'd.m.Y - H:i:s')}</dd>
+				<dt>Flags:</dt>
+				<dd><f:for each="{deployment.flags}" as="flag"><span class="label label-default">{flag}</span> </f:for></dd>
+				<dt>Trackers:</dt>
+				<dd><f:for each="{deployment.trackers}" as="tracker"><span class="label label-default">#{tracker}</span> </f:for></dd>
 			</dl>
 		</div>
 	</div>
@@ -21,17 +23,23 @@
 	<h2>Commits:</h2>
 
 	<f:for each="{deployment.commits}" as="commit" iteration="commitIterator">
-
 	<div class="panel panel-default">
 		<!-- Default panel contents -->
-		<div class="panel-heading">{commit.messageFirstLine}</div>
+		<div class="panel-heading"><h2 class="panel-title">{commit.messageFirstLine}</h2></div>
 		<div class="panel-body">
+			<dl class="dl-horizontal">
+				<dt>Flags:</dt>
+				<dd><f:for each="{commit.flags}" as="commitFlag"><span class="label label-default">{commitFlag}</span> </f:for></dd>
+				<dt>Redmine:</dt>
+				<dd><f:for each="{commit.trackers}" as="commitTracker"><span class="label label-default">#{commitTracker}</span> </f:for></dd>
+				<dt>Change-Id:</dt>
+				<dd><code>{commit.changeId}</code></dd>
+				<dt>SHA1:</dt>
+				<dd><code>{commit.sha1}</code></dd>
+			</dl>
 			<pre>{commit.message -> f:format.nl2br()}</pre>
 			<button type="button" class="btn btn-default btn-xs" disabled="disabled">View commit</button>
 		</div>
 	</div>
-
 	</f:for>
-
-
 </f:section>

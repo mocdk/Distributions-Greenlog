@@ -100,4 +100,32 @@ class Deployment {
 		return $this;
 	}
 
+	/**
+	 * @return array
+	 */
+	public function getFlags() {
+		$flags = array();
+
+		/** @var \Moc\GreenLog\Domain\Model\Commit $commit */
+		foreach ($this->getCommits() as $commit) {
+			$flags = array_merge($flags, $commit->getFlags());
+		}
+
+		return array_unique($flags, SORT_REGULAR);
+	}
+
+	/**
+	 * @return array
+	 */
+	public function getTrackers() {
+		$trackers = array();
+
+		/** @var \Moc\GreenLog\Domain\Model\Commit $commit */
+		foreach ($this->getCommits() as $commit) {
+			$trackers = array_merge($trackers, $commit->getTrackers());
+		}
+
+		return array_unique($trackers, SORT_REGULAR);
+	}
+
 }

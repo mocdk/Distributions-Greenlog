@@ -146,8 +146,31 @@ class Commit {
 	 */
 	public function getMessageFirstLine() {
 		$lines = explode(PHP_EOL, $this->message, 2);
-
 		return $lines[0];
+	}
+
+	/**
+	 * @return array
+	 */
+	public function getFlags() {
+		$matches = preg_match_all('/\[([A-Z]*)\]/', $this->getMessage(), $matchedFlags);
+		return $matchedFlags[1];
+	}
+
+	/**
+	 * @return array
+	 */
+	public function getTrackers() {
+		$matches = preg_match_all('/#([0-9]+)/', $this->getMessage(), $matchedTrackers);
+		return $matchedTrackers[1];
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getChangeId() {
+		$matches = preg_match_all('/Change-Id: ([a-zA-Z0-9]*)/', $this->getMessage(), $matchedChanheId);
+		return $matchedChanheId[1][0];
 	}
 
 }
