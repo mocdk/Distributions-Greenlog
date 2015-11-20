@@ -36,7 +36,7 @@
 						<th scope="row">-</th>
 						<td>{deployment.user}</td>
 						<td>{deployment.deployTime -> f:format.date(format: 'd.m.Y - H:i:s')}</td>
-						<td><f:for each="{deployment.flags}" as="flag"><span class="label label-default">{flag}</span> </f:for></td>
+						<td><f:for each="{deployment.flags}" as="flag"><f:render partial="Flag" arguments="{flag: flag}" /> </f:for></td>
 						<td><f:link.action action="showDeployment" arguments="{deployment: deployment}" class="btn btn-default btn-xs">View deployment</f:link.action></td>
 					</tr>
 				</f:for>

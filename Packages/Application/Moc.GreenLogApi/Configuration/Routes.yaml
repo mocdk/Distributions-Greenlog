@@ -9,3 +9,20 @@
     '@format':     'json'
   httpMethods:
     - POST
+
+-
+  name: 'get script'
+  uriPattern: 'go'
+  defaults:
+    '@package':    'Moc.GreenLogApi'
+    '@controller': 'Api'
+    '@action':     'getScript'
+    '@format':     'txt'
+
+-
+  name: 'update script'
+  uriPattern: 'update'
+  defaults:
+    '@package':    'Moc.GreenLogApi'
+    '@controller': 'Api'
+    '@action':     'updateScript'

@@ -12,9 +12,9 @@
 				<dt>Deployment time:</dt>
 				<dd>{deployment.deployTime -> f:format.date(format: 'd.m.Y - H:i:s')}</dd>
 				<dt>Flags:</dt>
-				<dd><f:for each="{deployment.flags}" as="flag"><span class="label label-default">{flag}</span> </f:for></dd>
+				<dd><f:for each="{deployment.flags}" as="flag"><f:render partial="Flag" arguments="{flag: flag}" /> </f:for></dd>
 				<dt>Trackers:</dt>
-				<dd><f:for each="{deployment.trackers}" as="tracker"><span class="label label-default">#{tracker}</span> </f:for></dd>
+				<dd><f:for each="{deployment.trackers}" as="tracker"><f:render partial="Tracker" arguments="{tracker: tracker}" /> </f:for></dd>
 			</dl>
 		</div>
 	</div>
@@ -29,9 +29,9 @@
 		<div class="panel-body">
 			<dl class="dl-horizontal">
 				<dt>Flags:</dt>
-				<dd><f:for each="{commit.flags}" as="commitFlag"><span class="label label-default">{commitFlag}</span> </f:for></dd>
+				<dd><f:for each="{commit.flags}" as="commitFlag"><f:render partial="Flag" arguments="{flag: commitFlag}" /> </f:for></dd>
 				<dt>Redmine:</dt>
-				<dd><f:for each="{commit.trackers}" as="commitTracker"><span class="label label-default">#{commitTracker}</span> </f:for></dd>
+				<dd><f:for each="{commit.trackers}" as="commitTracker"><f:render partial="Tracker" arguments="{tracker: commitTracker}" /> </f:for></dd>
 				<dt>Change-Id:</dt>
 				<dd><code>{commit.changeId}</code></dd>
 				<dt>SHA1:</dt>

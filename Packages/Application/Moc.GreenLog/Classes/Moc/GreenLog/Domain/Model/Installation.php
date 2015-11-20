@@ -33,6 +33,7 @@ class Installation {
 	/**
 	 * @var \Doctrine\Common\Collections\ArrayCollection<\Moc\GreenLog\Domain\Model\Deployment>
 	 * @ORM\OneToMany(mappedBy="installation")
+	 * @ORM\OrderBy({"deployTime" = "DESC"})
 	 */
 	protected $deployments;
 

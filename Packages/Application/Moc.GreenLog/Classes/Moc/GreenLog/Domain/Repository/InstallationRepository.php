@@ -15,8 +15,7 @@ use TYPO3\Flow\Persistence\Repository;
 class InstallationRepository extends Repository {
 
 	protected $defaultOrderings = array(
-		'name' => \TYPO3\Flow\Persistence\QueryInterface::ORDER_ASCENDING,
-		'hostName' => \TYPO3\Flow\Persistence\QueryInterface::ORDER_ASCENDING
+		'deployments.deployTime' => \TYPO3\Flow\Persistence\QueryInterface::ORDER_ASCENDING
 	);
 
 	// add customized methods here

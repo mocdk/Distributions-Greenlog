@@ -82,4 +82,26 @@ class ApiController extends \TYPO3\Flow\Mvc\Controller\ActionController {
 		return 'Deployment registered';
 	}
 
+	/**
+	 * @return string
+	 */
+	public function getScriptAction(){
+		$script = file_get_contents('resource://Moc.GreenLogApi/Private/gitHooks/post-checkout.php');
+		return $script;
+	}
+
+	/**
+	 * @param string $version
+	 * @return string
+	 */
+	public function updateScriptAction($version){
+		if($version !== md5_file('resource://Moc.GreenLogApi/Private/gitHooks/post-checkout.php')) {
+//			$this->response->setHeader('Content-Type', 'application/x-httpd-php-source');
+			return file_get_contents('resource://Moc.GreenLogApi/Private/gitHooks/post-checkout.php');
+		} else {
+			$this->response->setStatus(204);
+			return '';
+		}
+	}
+
 }
