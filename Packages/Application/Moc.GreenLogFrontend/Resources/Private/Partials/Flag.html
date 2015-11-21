@@ -1,0 +1,8 @@
+<f:switch expression="{flag}">
+	<f:case value="!!!"><span class="label label-danger">{flag}</span></f:case>
+	<f:case value="BUGFIX"><span class="label label-warning">{flag}</span></f:case>
+	<f:case value="FEATURE"><span class="label label-primary">{flag}</span></f:case>
+	<f:case value="TASK"><span class="label label-primary">{flag}</span></f:case>
+	<f:case value="MERGE"><span class="label label-info">{flag}</span></f:case>
+	<f:defaultCase><span class="label label-default">{flag}</span></f:defaultCase>
+</f:switch>
