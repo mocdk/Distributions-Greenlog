@@ -42,6 +42,7 @@ class Commit {
 
 	/**
 	 * @var string
+	 * @ORM\Column(type="text")
 	 */
 	protected $message;
 
